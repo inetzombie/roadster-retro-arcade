@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Roadster Retro Arcade</title>
+<meta name="description" content="Fly a red Roadster over a neon city, pull kickflips over 18-wheelers and blast crooks. SNES Mode-7 style browser arcade.">
+<meta name="theme-color" content="#0a0018">
+<meta property="og:type" content="website"><meta property="og:title" content="Roadster Retro Arcade">
+<meta property="og:description" content="Kickflip a flying Roadster over traffic and bust crooks in a Mode-7 neon city. Play in your browser.">
+<meta property="og:image" content="https://roadster-retro-arcade.vercel.app/screenshot.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Roadster Retro Arcade">
+<meta name="twitter:description" content="SNES-style flying Roadster stunt & crime-fighting arcade. Play now.">
+<meta name="twitter:image" content="https://roadster-retro-arcade.vercel.app/screenshot.png">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg">
+<style>
+html,body{margin:0;height:100%;background:#000;overflow:hidden;touch-action:none}
+#wrap{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+canvas{image-rendering:pixelated;image-rendering:crisp-edges}
+#crt{position:fixed;pointer-events:none;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.28) 0 1px,transparent 1px 3px),radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.75))}
+#crt.off{display:none}
+#touch{position:fixed;inset:0;pointer-events:none;display:none}
+#touch button{pointer-events:auto;position:absolute;width:56px;height:56px;border-radius:50%;border:2px solid #f0f;background:rgba(40,0,60,.45);color:#fff;font:bold 12px monospace}
+</style></head><body>
+<div id="wrap"><canvas id="c" width="320" height="180"></canvas></div><div id="crt"></div>
+<div id="touch">
+<button data-k="left" style="left:12px;bottom:70px">◀</button><button data-k="right" style="left:120px;bottom:70px">▶</button>
+<button data-k="up" style="left:66px;bottom:124px">▲</button><button data-k="down" style="left:66px;bottom:16px">▼</button>
+<button data-k="fire" style="right:12px;bottom:70px">FIRE</button><button data-k="boost" style="right:72px;bottom:16px">BOOST</button>
+<button data-k="flip" style="right:72px;bottom:124px">FLIP</button><button data-k="roll" style="right:132px;bottom:70px">ROLL</button>
+<button data-k="bflip" style="right:132px;bottom:16px;font-size:10px">BACK<br>FLIP</button><button data-k="spin" style="right:132px;bottom:124px">360</button><button data-k="mode" style="right:12px;bottom:140px">FLY</button>
+</div>
+<script src="trackpoint.js"></script><script src="game.js"></script>
+<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{})</script>
+</body></html>
